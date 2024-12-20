@@ -1,0 +1,487 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+  
+  .icon-square {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+  }
+  
+  .profile-img {
+    border-radius: 50%;
+    height: 100px;
+  }
+/* Font & Background */
+body {
+    font-family: 'Poppins', sans-serif;
+background-color: #b51818;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px;
+  
+    
+}
+
+/* Header */
+.header {
+    text-align: center;  
+    border-radius: 20px;
+    border-style: groove;
+    width: 50%;
+    margin: 10px auto;
+    margin-top: 0px;
+    background-color: #1abc9c;
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.header .tagline {
+    font-size: 1rem;
+    color: #34495e;
+    margin-top: 10px;
+}
+.line{
+    width: 150px;
+    height: 4px;
+    background-color: red;
+    margin: 0 auto;
+    padding-top: 0;
+    margin-top: 0px;
+}
+/*after nav bar*/
+.top2{
+    height: 100vh;
+    width: 100%;
+    background-image: url(./images/fitness.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+    background-position: bottom;
+    background-size: cover;
+    border-bottom-right-radius:20px ;
+    border-bottom-left-radius:20px ;
+  
+}
+.top2 h1{
+    font-size: 3rem;
+    color: white;
+    padding: 0;
+    margin-bottom: 0;
+}
+.top2 h2{
+   
+    color: white;
+}
+.top2 .line{
+    margin: 0 auto;
+}
+.main{
+    margin-top: 20px;
+}
+
+.main1{
+     background: url(./images/diet.jpg);
+    background-position: bottom;
+    background-size: cover;
+    height: 150vh;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Main Content */
+.gradient-background{
+    background-color: whitesmoke;
+}
+.glass-container {
+
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 600px;
+    padding: 20px 30px;
+    margin: 20px;
+   
+ 
+}
+a{
+text-decoration: none;
+color: whitesmoke;
+}
+.top{
+    background-color: #34495e;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+   
+}
+li{
+    list-style: none;
+    color: whitesmoke;
+    margin-right: 20px;
+    padding: 5px;
+
+}
+.content {
+    text-align: center;
+}
+
+.content h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.content .intro-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+.main2
+{
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.col{
+    width: 50%;
+}
+.col-content h1{
+    font-size: 3.5rem;
+    margin-bottom:0 ;
+    color: #1d1f1d;
+}
+.col-images{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+img{
+    border-radius: 5px;
+    margin: 5px;
+}
+.line{
+    margin-left: 0px;
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 1rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input, 
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    color: #2c3e50;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.form-group input::placeholder, 
+.form-group select::placeholder {
+    color: #aaa;
+}
+
+.submit-btn {
+    padding: 12px 20px;
+    background: #1abc9c;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #16a085;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin: 0;
+    background-color: rgb(186, 185, 185);
+    width: 100%;
+    padding: 10px 0;
+    position: relative; /* Default position */
+    bottom: 0; /* Ensure no floating */
+}
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #d0c4c4;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #1abc9c;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 30px;
+    text-align: center;
+}
+.main2{
+    margin-top: 30px;
+}
+
+/* Glass Container for the Timetable */
+.glass-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+   
+    
+}
+
+/* Diet Details Section */
+#dietDetails h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+#dietDetails p {
+    font-size: 1.2rem;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #1abc9c;
+    color: white;
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+td {
+    font-size: 1rem;
+}
+
+/* Resources Section */
+#resources {
+    margin-top: 30px;
+    text-align: left;
+}
+
+#resources ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#resources li {
+    margin-bottom: 10px;
+}
+
+#resources a {
+    color: #1abc9c;
+    text-decoration: none;
+}
+
+#resources a:hover {
+    text-decoration: underline;
+}
+footer{
+    text-align: center;
+    margin: 0;
+    background-color: rgb(186, 185, 185);
+    width: 100%;
+height: auto;
+}
+@media (max-width: 900px) {
+    body {
+        align-items: flex-start; /* Prevent centering on small screens */
+       
+    }
+    
+    .top {
+        
+        align-items: center;
+        padding: 10px;
+       
+    }
+   .col-content p{
+    text-align: justify;
+
+   }
+  
+
+    .top2 {
+        height: 100vh;
+  
+    }
+
+    .top2 h1 {
+        font-size: 1.8rem;
+    }
+
+    .top2 h2 {
+        font-size: 1rem;
+    }
+  
+
+    .glass-container {
+        padding: 15px;
+        
+       
+    }
+
+    .content h2 {
+        font-size: 1.2rem;
+    }
+
+    .main2 {
+        flex-direction: column;
+        align-items: center;
+        flex: 1;
+    }
+.col-content .line{
+ margin: 0 auto;  
+}
+
+    .col {
+        max-width: 100%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .col-images img {
+        max-width: 100%;
+    }
+    .row{
+        flex-direction: column;
+       
+    }
+    .top2 h1 {
+        font-size: 1.5rem;
+    }
+
+    .top2 h2 {
+        font-size: 0.9rem;
+    }
+
+    .nav-links li {
+        font-size: 0.8rem;
+    }
+
+    .content h2 {
+        font-size: 1rem;
+    }
+  
+
+    .form-group input, 
+    .form-group select {
+        font-size: 0.9rem;
+    }
+    .main2{
+        width: 100%;
+        margin-top: 20px;
+        height: 100vh;
+    }
+.main2 col{
+    width: 100%;
+    height: 100vh;
+}
+    .submit-btn {
+        font-size: 0.9rem;
+    }
+    .col .col-images{
+        max-width: 90;
+        height: 100%;
+       
+       }
+    
+  
+
+    
+
+
+    
+}

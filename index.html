@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Diet Planner</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body class="gradient-background">
+    
+    <section class="top">
+        <div class="logo"><img  width="50px" height="50px" src="./images/pineapple.png " alt="logo"></div>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <li><a  target="_blank" href="./public/about.html">About</a></li>
+                <li><a target="_blank" href="https://www.who.int/initiatives/behealthy/healthy-diet#:~:text=A%20healthy%20diet%20is%20essential,are%20essential%20for%20healthy%20diet.">learn More</a></li>
+                <li><a href="./public/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </section>
+    <section class="top2">
+        <div class="title">
+            <h1>🍎 Personalized Diet Planner 🍎</h1>
+            <div class="line"></div>
+            <h2>Stay healthy and eat Healthy</h2>
+        </div>
+    </section>
+    
+    <section class="header">
+        <h1 class="logo">🍎 Personalized Diet Planner 🍎</h1>
+        <p class="tagline">Your health, our priority. Let's craft a diet plan that works for you!</p>
+    </section>
+  <section class="main1 "> <main class="glass-container">
+        <div class="content">
+            <h2>Start Your Journey</h2>
+            <p class="intro-text">
+                Achieve your health goals with a diet tailored to your preferences, lifestyle, and needs. Fill out the details below to create your personalized plan!
+            </p>
+            <form id="dietForm" action="/public/timetable.html" method="get">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" name="age" placeholder="Enter your age" required>
+                </div>
+                <div class="form-group">
+                    <label for="goal">Health Goal</label>
+                    <select id="goal" name="goal" required>
+                        <option value="" disabled selected>Select your goal</option>
+                        <option value="weight_loss">Weight Loss</option>
+                        <option value="muscle_gain">Muscle Gain</option>
+                        <option value="maintain">Maintain Weight</option>
+                        <option value="weekly_plan">Weekly Meal Plan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="activity">Activity Level</label>
+                    <select id="activity" name="activity" required>
+                        <option value="" disabled selected>Choose activity level</option>
+                        <option value="low">Low (Sedentary)</option>
+                        <option value="medium">Medium (Active)</option>
+                        <option value="high">High (Very Active)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="allergies">Allergies (Optional)</label>
+                    <input type="text" id="allergies" name="allergies" placeholder="E.g., nuts, dairy, gluten">
+                </div>
+                <div class="form-group">
+                    <label for="preferences">Food Preferences (Optional)</label>
+                    <input type="text" id="preferences" name="preferences" placeholder="E.g., vegetarian, keto, vegan">
+                </div>
+                <button type="submit" class="submit-btn">Generate Diet Plan</button>
+            </form>
+        </div>
+    </main></section>
+   <section class="main2">
+      <div class="row">
+        <div class="col col-content">
+            <h1>Stay healthy and eat Healthy</h1>
+            <div class="line"></div>
+            <p>Planning a diet ensures you incorporate a variety of nutritious foods like fruits, vegetables, whole grains, lean proteins, and healthy fats into your meals. A well-structured diet plan helps manage portion sizes, avoid unhealthy snacking, and meet your nutritional needs.Healthy eating helps maintain a healthy weight, supports digestive health, and promotes better sleep patterns. By making mindful food choices, individuals can improve their quality of life and lay the foundation for a longer, healthier future.</p>
+        </div>
+        <div class="col col-images">
+            <img width="300px" height="223px" src="./images/thomas.jpg" alt="image">
+            <img width="300px" height="223px" src="./images/frepik.jpeg" alt="images">
+            <img width="300px" height="223px" src="./images/frrepik2.jpeg" alt="images">
+            <img width="300px" height="223px" src="./images/kevin.jpg" alt="images">
+           
+        </div>
+      </div>
+   </section>
+
+    <footer >
+        <p>&copy; 2024 Personalized Diet Planner. Crafted for your health journey.</p>
+         <p>All rights are Reserved</p>
+         <p>help:<a href="mailto:dietplanner@gmail.com">dietplanner@gmail.com</a></p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Diet Timetable</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<style>
+
+    .gradient-background {
+  background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+</style>
+<body class="gradient-background">
+    <header class="header">
+        <h1 class="logo">🍎 Your Personalized Diet Timetable</h1>
+    </header>
+    <main class="glass-container">
+        <div id="dietDetails">
+            <h2 id="userGreeting">Hello!</h2>
+            <p>Your personalized diet plan is ready. Follow the schedule below to achieve your health goals!</p>
+        </div>
+        <table id="timetable">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Meal</th>
+                    <th>Details</th>
+                    <th>Calories</th>
+                    <th>Focus Nutrient</th>
+                </tr>
+            </thead>
+            <tbody id="mealRows">
+<!--Rows will be generated dynamically -->
+            </tbody>
+        </table>
+        <section id="resources">
+            <h3>Helpful Resources</h3>
+            <ul>
+                <li><a href="https://www.choosemyplate.gov/" target="_blank">ChooseMyPlate</a> – U.S. nutrition guidelines.</li>
+                <li><a href="https://www.healthline.com/" target="_blank">Healthline</a> – Nutritional insights.</li>
+                <li><a href="https://www.calculator.net/calorie-calculator.html" target="_blank">Calorie Calculator</a> – Determine your daily calorie needs.</li>
+            </ul>
+        </section>
+    </main>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get("name");
+        const goal = urlParams.get("goal");
+        const activity = urlParams.get("activity");
+
+        const dietDetails = document.getElementById("dietDetails");
+        const userGreeting = document.getElementById("userGreeting");
+        const mealRows = document.getElementById("mealRows");
+
+        userGreeting.textContent = `Hello, ${name}! Here's your plan for ${goal.replace("_", " ")}.`;
+        
+
+        const plans = {
+            weight_loss: [
+                { time: "7:30 AM", meal: "Breakfast", details: "Oatmeal with fruits and nuts", calories: 300, focus: "Carbs, Fiber" },
+                { time: "10:30 AM", meal: "Snack", details: "Greek yogurt with berries", calories: 150, focus: "Protein" },
+                { time: "1:00 PM", meal: "Lunch", details: "Grilled chicken salad with olive oil", calories: 400, focus: "Protein, Healthy Fats" },
+                { time: "4:00 PM", meal: "Snack", details: "Carrot sticks with hummus", calories: 100, focus: "Fiber, Fats" },
+                { time: "7:00 PM", meal: "Dinner", details: "Steamed vegetables with baked salmon", calories: 450, focus: "Protein, Omega-3" },
+                { time: "8:00 PM", meal: "After dinner", details: "Rinse the Almonds,Resins", calories:296 , focus: "Protein, vitamins" },
+                
+            ],
+            muscle_gain: [
+                { time: "7:00 AM", meal: "Breakfast", details: "Eggs with avocado on toast", calories: 400, focus: "Protein, Fats" },
+                { time: "10:00 AM", meal: "Snack", details: "Banana with peanut butter", calories: 200, focus: "Carbs, Fats" },
+                { time: "1:00 PM", meal: "Lunch", details: "Chicken breast with quinoa and veggies", calories: 600, focus: "Protein, Carbs" },
+                { time: "4:00 PM", meal: "Snack", details: "Protein smoothie with almond milk", calories: 250, focus: "Protein" },
+                { time: "8:00 PM", meal: "Dinner", details: "Grilled steak with sweet potato", calories: 700, focus: "Protein, Carbs" },
+                { time: "9:00 PM", meal: "After dinner", details: "Rinse the Almonds,Resins", calories: 296 , focus: "Protein, vitamins" },
+            ],
+            maintain: [
+                { time: "8:00 AM", meal: "Breakfast", details: "Whole-grain toast with peanut butter", calories: 300, focus: "Carbs, Fats" },
+                { time: "12:30 PM", meal: "Lunch", details: "Turkey sandwich with side salad", calories: 450, focus: "Protein, Fiber" },
+                { time: "3:30 PM", meal: "Snack", details: "Trail mix (almonds, raisins)", calories: 200, focus: "Fats, Fiber" },
+                { time: "7:00 PM", meal: "Dinner", details: "Stir-fried tofu with brown rice", calories: 500, focus: "Protein, Carbs" },
+                { time: "8:00 PM", meal: "After dinner", details: "Drink Enough Water", calories: 0, focus: "Good digestion" },
+            ],
+            weekly_plan:  [
+    { time: "7:30 AM", meal: "Breakfast", details: "Monday: Oatmeal with fruits", calories: 300, focus: "Carbs" },
+    { time: "1:00 PM", meal: "Lunch", details: "Monday: Grilled chicken salad", calories: 400, focus: "Protein" },
+    { time: "7:00 PM", meal: "Dinner", details: "Monday: Baked salmon with quinoa", calories: 450, focus: "Protein, Omega-3" },
+    { time: "7:30 AM", meal: "Breakfast", details: "Tuesday: Greek yogurt with granola", calories: 350, focus: "Protein, Fiber" },
+    { time: "1:00 PM", meal: "Lunch", details: "Tuesday: Quinoa bowl with roasted veggies", calories: 380, focus: "Fiber, Carbs" },
+    { time: "7:00 PM", meal: "Dinner", details: "Tuesday: Grilled shrimp with steamed broccoli", calories: 400, focus: "Protein, Vitamin C" },
+    { time: "7:30 AM", meal: "Breakfast", details: "Wednesday: Scrambled eggs with avocado toast", calories: 330, focus: "Protein, Healthy Fats" },
+    { time: "1:00 PM", meal: "Lunch", details: "Wednesday: Turkey wrap with spinach and hummus", calories: 400, focus: "Protein, Fiber" },
+    { time: "7:00 PM", meal: "Dinner", details: "Wednesday: Stir-fried tofu with brown rice", calories: 420, focus: "Protein, Carbs" },
+    { time: "7:30 AM", meal: "Breakfast", details: "Thursday: Smoothie with spinach, banana, and almond milk", calories: 300, focus: "Vitamins, Fiber" },
+    { time: "1:00 PM", meal: "Lunch", details: "Thursday: Lentil soup with whole-grain bread", calories: 370, focus: "Fiber, Protein" },
+    { time: "7:00 PM", meal: "Dinner", details: "Thursday: Grilled chicken with sweet potato mash", calories: 430, focus: "Protein, Carbs" },
+    { time: "7:30 AM", meal: "Breakfast", details: "Friday: Cottage cheese with fresh berries", calories: 320, focus: "Protein, Antioxidants" },
+    { time: "1:00 PM", meal: "Lunch", details: "Friday: Tuna salad with mixed greens", calories: 390, focus: "Protein, Omega-3" },
+    { time: "7:00 PM", meal: "Dinner", details: "Friday: Beef stir-fry with bell peppers and mushrooms", calories: 450, focus: "Protein, Iron" },
+    { time: "7:30 AM", meal: "Breakfast", details: "Saturday: Pancakes with a side of scrambled eggs", calories: 400, focus: "Carbs, Protein" },
+    { time: "1:00 PM", meal: "Lunch", details: "Saturday: Chickpea salad with cucumber and feta", calories: 380, focus: "Fiber, Protein" },
+    { time: "7:00 PM", meal: "Dinner", details: "Saturday: Baked chicken with roasted Brussels sprouts", calories: 420, focus: "Protein, Vitamin K" }
+            ],
+        };
+
+        const selectedPlan = plans[goal] || [];
+        if (selectedPlan.length === 0) {
+            mealRows.innerHTML = `<tr><td colspan="5">Sorry, no plan available for your input.</td></tr>`;
+        } else {
+            selectedPlan.forEach((row) => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = ` 
+                    <td>${row.time}</td>
+                    <td>${row.meal}</td>
+                    <td>${row.details}</td>
+                    <td>${row.calories} kcal</td>
+                    <td>${row.focus}</td>
+                `;
+                mealRows.appendChild(tr);
+            });
+        }
+    </script>
+</body>
+</html>
